@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: serif, 'Courier New', Courier, monospace;
+    text-align: center;
+    color: gray;
+    background: linear-gradient(90deg, rgb(29, 26, 26), rgb(29, 29, 28), rgb(57, 57, 59));
+}
+
+#main {
+    margin: 0 auto;
+    padding: 15px;
+    font-size: 1em;
+    font-stretch: expanded;
+    color: rgb(143, 140, 138);
+}
+
+#title {
+    color: rgb(240, 75, 10);
+    text-transform: uppercase;
+    display: block;
+    position: relative;
+}
+
+#title::before {
+    content: " ";
+    color: white;
+    background: rgb(186, 216, 15);
+    height: 25px;
+    display: block;
+}
+
+#title::after {
+    content: " ";
+    color: white;
+    background: rgba(24, 144, 165, 0.678);
+    display: block;
+    height: 25px;
+}
+
+#img-div {
+    background: linear-gradient(45deg, rgb(19, 21, 21), rgb(12, 10, 7));
+    padding: 10px;
+    box-shadow: 20px 26px 6px -8px rgb(16, 16, 16);
+    border-radius: 5%;
+}
+
+#image {
+    max-width: 100%;
+    display: block;
+    top: 50%;
+    left: 50%;
+    border-radius: 8%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#image2 {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8%;
+}
+
+.card {
+    background: transparent;
+    max-width: 100%;
+    position: relative;
+}
+
+#image:hover {
+    transition: opacity ease-out 2000ms;
+    opacity: 0;
+}
+
+#img-caption {
+    padding: 2em;
+    font-size: 1em;
+    font-weight: 700;
+    color: coral;
+    display: inline-block;
+}
+
+#jason {
+    margin-top: 2em;
+    color: tomato;
+    font-size: x-large;
+    display: inline-block;
+    position: relative;
+}
+
+#jason::before {
+    content: '';
+    background: rgb(29, 26, 26);
+    position: absolute;
+    height: 100%;
+    left: -20px;
+    right: -20px;
+    display: block;
+    z-index: -1;
+}
+
+#jason::after {
+    content: '';
+    background: tomato;
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: -2;
+}
+
+#tribute-info {
+    text-align: left;
+    padding: 2em;
+    counter-reset: tribute;
+    font-stretch: expanded;
+    font-family: sans-serif;
+}
+
+p::before {
+    counter-increment: tribute;
+    content: counter(tribute);
+    position: absolute;
+    left: -2.7em;
+    background: rgb(162, 218, 208);
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    border: 3px solid rgb(186, 216, 15);
+    box-sizing: border-box;
+    color: black;
+    font-weight: bold;
+}
+
+#tribute-link {}
+
+ul {
+    max-width: 550px;
+    margin: 0 auto 50px auto;
+    text-align: left;
+    line-height: 1.5;
+    list-style: none;
+    display: grid;
+    grid-template-rows: repeat(10, auto);
+}
+
+li {
+    margin: 16px 0;
+    position: relative;
+}
+
+blockquote {
+    font-size: 1.25rem;
+    color: tomato;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+blockquote::before {
+    content: open-quote;
+    font-size: x-large;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+blockquote::after {
+    content: close-quote;
+    font-size: x-large;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+#external_link {
+    text-align: center;
+}
+
+#hor {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+a {
+    color: #477ca7;
+}
+
+a:visited {
+    color: #74638f;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    color: rgb(158, 154, 154);
+    font-family: monospace;
+}
+
+@media only screen and (max-width: 460px) {
+    #jason {
+        margin-top: 0em;
+        font-size: 1em;
+    }
+    #jason::before {
+        content: '';
+        background: rgb(29, 26, 26);
+        position: absolute;
+        height: 100%;
+        left: -7px;
+        right: -7px;
+        display: block;
+        z-index: -1;
+    }
+    #img-caption {
+        font-size: .8em;
+    }
+    #img-div {
+        box-shadow: 21px 26px 6px -30px rgb(16, 16, 16);
+    }
+    #tribute-info {
+        padding: 3em;
+        font-size: 0.9em;
+    }
+}
